@@ -77,8 +77,8 @@ const tebakjenaka = JSON.parse(fs.readFileSync('./database/game/tebakjenaka.json
  /* <==============[ SETTING ]===============> */
 indonesia = true
 english = false
-public = true
-self = false
+public = false 
+self = true
 budak = "♟"
 budakk = true
 benteng = "♜"
@@ -135,8 +135,8 @@ bulan1, tahun1, botname } = setting
             let nnnyz4 = nnnyz3.message["ephemeralMessage"] ? nnnyz3.message.ephemeralMessage : nnnyz3
             const nnnyz5 = [
             {buttonId: 'id1', buttonText: {displayText: 'WELCOME'}, type: 1}]
-            const nnnyz6 = {contentText: `[ *SELAMAT DATANG* ]\n• *NAME* : @${memJid.split('@')[0]}\n• *GROUP* : ${mdata.subject}\n• *MEMBER* : ${jumlahMem.length}`, footerText: `© botz by ${ownername} || 2022`, buttons: nnnyz5, headerType: 6, locationMessage: nnnyz4.message.locationMessage}
-            nayla.sendMessage(mdata.id,  nnnyz6, MessageType.buttonsMessage,{caption: 'whatsapp',"contextInfo": {text: 'BOTZ19', "forwardingScore": 1000000000, isForwarded: true, sendEphemeral: true, "mentionedJid" : [memJid], },sendEphemeral: true})                         
+            const nnnyz6 = {contentText: `[ *SELAMAT DATANG* ]\n• *NAME* : @${memJid.split('@')[0]}\n• *GROUP* : ${mdata.subject}\n• *MEMBER* : ${jumlahMem.length}`, footerText: `© bot by ${ownername} || 2022`, buttons: nnnyz5, headerType: 6, locationMessage: nnnyz4.message.locationMessage}
+            nayla.sendMessage(mdata.id,  nnnyz6, MessageType.buttonsMessage,{caption: 'whatsapp',"contextInfo": {text: 'aiman', "forwardingScore": 1000000000, isForwarded: true, sendEphemeral: true, "mentionedJid" : [memJid], },sendEphemeral: true})                         
 			}
             if (anu.action == 'remove') {
             let nnnyz2 = fs.readFileSync(`./database/sticker/welcome.jpg`)
@@ -144,8 +144,8 @@ bulan1, tahun1, botname } = setting
             let nnnyz4 = nnnyz3.message["ephemeralMessage"] ? nnnyz3.message.ephemeralMessage : nnnyz3
             const nnnyz5 = [
             {buttonId: 'id1', buttonText: {displayText: 'BYEEEE'}, type: 1}]
-            const nnnyz6 = {contentText: `[ *SELAMAT TINGGAL* ]\n• *NAME* : @${memJid.split('@')[0]}\n• *GROUP* : ${mdata.subject}\n• *MEMBER* : ${jumlahMem.length}`, footerText: `© botz by ${ownername} || 2022`, buttons: nnnyz5, headerType: 6, locationMessage: nnnyz4.message.locationMessage}
-            nayla.sendMessage(mdata.id,  nnnyz6, MessageType.buttonsMessage,{caption: 'whatsapp',"contextInfo": {text: 'BOTZ19', "forwardingScore": 1000000000, isForwarded: true, sendEphemeral: true, "mentionedJid" : [memJid], },sendEphemeral: true})             
+            const nnnyz6 = {contentText: `[ *SELAMAT TINGGAL* ]\n• *NAME* : @${memJid.split('@')[0]}\n• *GROUP* : ${mdata.subject}\n• *MEMBER* : ${jumlahMem.length}`, footerText: `© bot by ${ownername} || 2022`, buttons: nnnyz5, headerType: 6, locationMessage: nnnyz4.message.locationMessage}
+            nayla.sendMessage(mdata.id,  nnnyz6, MessageType.buttonsMessage,{caption: 'whatsapp',"contextInfo": {text: 'aiman', "forwardingScore": 1000000000, isForwarded: true, sendEphemeral: true, "mentionedJid" : [memJid], },sendEphemeral: true})             
             }
 		    } catch (e) {
 			console.log(e)
@@ -160,7 +160,7 @@ bulan1, tahun1, botname } = setting
             if (self == true) {
 			if (!nay.key.fromMe) return
 			} 
-			if (public == true) {
+			if (public == false) {
 			if (nay.key.fromMe) return
 			}					
 			if (nay.key && nay.key.remoteJid == 'status@broadcast') return 
